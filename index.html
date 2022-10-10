@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" 
+    rel="stylesheet">
+    <!-- meta data -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Item7Go</title>
+</head>
+<body>
+    <header>
+        <div class="header-texts">
+            <h2>Eatable</h2>
+            <h3>Home of Nigerian Delicacies...</h3>
+        </div>
+    </header>
+    <main>
+        <div class="foods-stage" id="foods-stage"></div>
+    </main>
+    <section class="order-summary-stage" id="order-summary-stage"></section>
+    <section class="popup-outer" id="popup-outer">
+        <div class="popup-inner">
+            <h5>Pay with a debit card</h5>
+            <form id="pay-money">
+                <div id="processing">
+                    <div class="input-container">
+                        <label for="user-name">Name</label>
+                        <input type="text" name="fullname" placeholder="Enter card holder name" id="user-name" class="input" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="card-number">Number</label>
+                        <input type="number" name="number" placeholder="Enter card number" id="card-number" class="input" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="date">Expiry Date</label>
+                        <input type="month" name="date" id="date" class="input" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="cvv">cvv</label>
+                        <input type="number" name="cvv" placeholder="Enter card cvv" id="cvv" class="input" required>
+                    </div>
+                </div>
+                <button type="submit" id="pay-btn">Pay ₦5500</button>
+            </form>
+        </div>
+    </section>
+    <script src="index.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+* { box-sizing: border-box; }
+
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============
+    Layout
+=============== */
+
+header{
+    width: 100vw;
+    height: 18vh;
+    background: url(./food17.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.header-texts{
+    margin-left: 20px;
+}
+
+.foods-stage{
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 90vw;
+    max-width: 450px;
+    margin: 20px auto 0;
+}
+
+.foods-wrapper{
+    display: flex;
+    border-bottom: solid 1px rgb(209, 202, 202);
+    padding: 20px 0;
+}
+
+.foods-wrapper:last-child{
+    border-bottom: 0;
+}
+
+.food-sample{
+    width: 20%;
+}
+
+img{
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.texts-action{
+    margin-left: 15px;
+    width: 80%;
+}
+
+.texts,
+.order-details,
+.total,
+.texts-action{
+    display: flex;
+    justify-content: space-between;
+}
+
+.texts{
+    flex-direction: column;
+}
+
+.food-price{
+    margin-bottom: 10px;
+}
+
+.action{
+    margin: auto 0;
+}
+
+.add-btn{
+    width: 35px;
+    height: 35px;
+    border: 2px solid rgba(0, 0, 0, .1);
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: tomato;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.order-summary-stage{
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 90vw;
+    height: fit-content;
+    max-width: 450px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.order-summary{
+    width: 90vw;
+    max-width: 450px;
+    margin: 0 auto 20px;
+}
+
+.order-details{
+    width: 100%;
+    margin: .4em 0;
+}
+
+.order-details-wrapper{
+    border-bottom: 2px black solid;
+    padding: .4em 0;
+}
+
+.total{
+    margin: .8em 0;
+}
+
+.complete-order-btn{
+    width: 100%;
+    height: auto;
+    font-size: 1.3rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    background: rgb(9, 224, 9);
+    border: 2px solid rgb(16, 189, 16);
+    margin-top: 1em;
+    transition: .5s;
+}
+
+.complete-order-btn:hover,
+.complete-order-btn:focus{
+    cursor: pointer;
+    transform: translate(5px, -5px);
+}
+
+.remove-order{
+    font-size: .8rem;
+    color: rgba(0, 0, 0, .5);
+    margin-left: 8px;
+    transition: .5s;
+    transform: scale(1);
+}
+
+.remove-order:hover,
+.remove-order:focus{
+    cursor: pointer;
+    font-size: 1rem;
+    color: red;
+}
+
+.popup-outer{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .75);
+}
+
+.popup-inner{
+    width: 90vw;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 55vh;
+    border-radius: 5px;
+    background: white;
+}
+
+.pay-money{
+    margin-top: .9em;
+}
+
+.input-container{
+    position: relative;
+    width: 90%;
+    height: 5vh;
+    margin: .9em auto;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    background: none;
+    border: 1px solid rgb(181, 175, 175);
+    border-radius: 4px;
+    font-size: .9rem;
+    padding: 0 10px;
+}
+
+/* ::placeholder{
+    color: transparent;
+} */
+
+label{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    color: rgb(50, 46, 46);
+    font-size: .8rem;
+    background-color: #fff;
+    z-index: 1;
+}
+
+input:focus{
+    border: 1px solid orange; 
+}
+
+
+#pay-btn{
+    margin: 1.8em auto 0;
+    font-size: 1.1rem;
+    width: 90%;
+    height: 5vh;
+    border: 0;
+    cursor: pointer;
+    color: aliceblue;
+    background-image: linear-gradient(45deg, orange, tomato);
+    transform: scale(1);
+    transition: 500ms;
+}
+
+#pay-btn:hover,
+#pay-btn:focus{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.success-message{
+    display: none;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.success-inner{
+    padding: 0 10px;
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(109, 234, 221, 0.5);
+    color: rgb(0, 123, 111);
+    font-size: 1.1rem;
+}
+
+#loading{
+    width: 40%;
+    height: 70%;
+    margin: 10px auto;
+    padding: 0;
+}
+
+#loading > img{
+    width: 100%;
+    height: 100%;
+}
+
+.greyout{
+    opacity: .5;
+}
+/* ==============
+    Typography
+================= */
+h2,h3{
+    margin: 0;
+    text-shadow: 0 0 4px black;
+}
+
+h4{
+    margin: .5em 0;
+    text-align: center;
+}
+
+h5{
+    color: tomato;
+    font-size: 1.2rem;
+    margin-bottom: 2em;
+}
+
+p{
+    margin: 0;
+}
+
+.description-texts{
+    font-size: .8rem;
+    margin-top: .3em;
+}
+
+#payer-name{
+    color: tomato;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
